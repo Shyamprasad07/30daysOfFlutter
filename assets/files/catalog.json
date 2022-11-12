@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Apple iPhone 14 Plus 128GB Blue",
+            "desc": "Advanced camera system for better photos in any light",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://m.media-amazon.com/images/I/61BGE6iu4AL._SX522_.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Apple AirPods Pro (2nd Generation) ",
+            "desc": "AirPods Pro (2nd generation): Up to 6 hours of listening time with a single charge , Up to 4.5 hours of talk time with a single charge.",
+            "price": 155,
+            "color": "#00ac51",
+            "image": "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_UY218_.jpg"
+        },
+        {
+            "id": 3,
+            "name": "2022 Apple MacBook Air Laptop with M2",
+            "desc": "2022 Apple MacBook Air Laptop chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Midnight",
+            "price": 564,
+            "color": "#33505a",
+            "image": "https://m.media-amazon.com/images/I/719C6bJv8jL._AC_UY218_.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Apple Watch SE (2nd Gen) GPS 4",
+            "desc": "This item Apple Watch SE (2nd Gen) GPS 40mm Midnight Aluminium Case with Midnight Sport Band - Regular",
+            "price": 425,
+            "color": "#00ac51",
+            "image": "https://m.media-amazon.com/images/I/71LfnkRgZ4L._AC_SS450_.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Apple Lightning to 3.5 mm Headphone Jack Adapter",
+            "desc": "Works with all devices that have a lightning connector and support iOS 10 or later, including iPod touch, iPad and iPhone",
+            "price": 70,
+            "color": "#33505a",
+            "image": "https://m.media-amazon.com/images/I/413zwUVL+1L._AC_UY218_.jpg"
+        },
+        {
+            "id": 6,
+            "name": "boAt Immortal IM1000D Dual Channel Wired On Ear",
+            "desc": "It comes with Dual Mics and ENx technology that delivers your voice unhindered so that your squad and you stay in tune irrespective of the geographical distance, Mic Frequency - 100-10KHz",
+            "price": 356,
+            "color": "#7c95eb",
+            "image": "https://images-eu.ssl-images-amazon.com/images/I/411zO-6GqjS._AC_SX184_.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Logitech G402 Hyperion Fury",
+            "desc": "USB Wired Gaming Mouse, 4,000 DPI, Lightweight, 8 Programmable Buttons, Compatible for PC/Mac - Black",
+            "price": 158,
+            "color": "#1c1c1c",
+            "image": "https://m.media-amazon.com/images/I/61CqLgubwoL._SY355_.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Ant Esports KM500W Gaming Backlit Keyboard",
+            "desc": "Rainbow LED Backlit for Fantastic Game Enjoyment – Ant Esports KM500W, 2020 New version rainbow backlit gaming keyboard and mouse combo with multiple colours brings you to the fantastic gaming world.",
+            "price": 258,
+            "color": "#7c95eb",
+            "image": "https://images-eu.ssl-images-amazon.com/images/I/51vN1agHImL._AC_SX184_.jpg"
+        }
+    ]
+}
