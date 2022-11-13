@@ -21,12 +21,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
+    await Future.delayed(
+      Duration(seconds: 1),
+    );
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodeData = jsonDecode(catalogJson);
     var productsData = decodeData["products"];
     CatalogModel.items = List.from(productsData)
-        // List<Item> list = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
     setState(() {});
@@ -42,14 +44,46 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-            itemCount: CatalogModel.items.length,
-            itemBuilder: ((context, index) {
-              return ItemWiget(
-                item: CatalogModel.items[index],
-                // item: dummyList[index],
-              );
-            })),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            final item = CatalogModel.items[index];
+            return Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: GridTile(
+                  header: Container(
+                    child: Text(
+                      item.name,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                    ),
+                  ),
+                  child: Image.network(
+                    item.image,
+                  ),
+                  footer: Container(
+                    child: Text(
+                      item.price.toString(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                  ),
+                ));
+          },
+          itemCount: CatalogModel.items.length,
+        ),
       ),
       drawer: MyDrawer(),
     );
