@@ -10,10 +10,10 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: MyTheme.creamColor,
+      appBar: AppBar(backgroundColor: Colors.transparent),
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -23,13 +23,13 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
+                    context.theme.buttonColor,
                   ),
                   shape: MaterialStatePropertyAll(
                     StadiumBorder(),
                   )),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "Add to cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -47,18 +47,26 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
-                  child: Column(
-                    children: [
-                      catalog.name.text.xl4
-                          .color(MyTheme.darkBluishColor)
-                          .bold
-                          .make(),
-                      catalog.desc.text.textStyle(context.captionStyle).make(),
-                      10.heightBox,
-                    ],
-                  ).py64(),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        catalog.name.text.xl4
+                            .color(context.accentColor)
+                            .bold
+                            .make(),
+                        catalog.desc.text
+                            .textStyle(context.captionStyle)
+                            .make(),
+                        10.heightBox,
+                        "All-Day Battery Life - Go longer than  ever with up to 18 hours of battery life."
+                            .text
+                            .textStyle(context.captionStyle)
+                            .make(),
+                      ],
+                    ).py64(),
+                  ),
                 ),
               ))
             ],
