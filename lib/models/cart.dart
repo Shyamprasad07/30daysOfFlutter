@@ -8,7 +8,7 @@ class CartModel{
   final List<int>_itemIds = [];
   CatalogModel get catlog => _catalog;
   set catalog(CatalogModel newCatalog){
-    assert(newCatalog != null);
+  //  assert(newCatalog != null);
     _catalog  = newCatalog;
   }
   // get item in the cart;

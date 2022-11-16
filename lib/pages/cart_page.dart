@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catlog/Widgets/theme.dart';
 import 'package:flutter_catlog/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -35,7 +34,11 @@ class _CartTotal extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(),
+              "\$${_cart.totalPrice}"
+                  .text
+                  .xl5
+                  .color(context.theme.accentColor)
+                  .make(),
               30.widthBox,
               ElevatedButton(
                 onPressed: () {
@@ -64,14 +67,21 @@ class __CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _cart.items.length,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(
-            icon: Icon(Icons.remove_circle_outline), onPressed: () {}),
-        title: _cart.items[index].name.text.make(),
-      ),
-    );
+    return _cart.items.isEmpty
+        ? "Nothing to show".text.xl3.makeCentered()
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () {
+                  _cart.remove(_cart.items[index]);
+                  setState(() {});
+                },
+              ),
+              title: _cart.items[index].name.text.make(),
+            ),
+          );
   }
 }
