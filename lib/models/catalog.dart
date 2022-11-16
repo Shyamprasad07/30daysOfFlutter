@@ -2,8 +2,7 @@ import 'dart:html';
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> items = CatalogModel
-      .items; /* =[
+  static List<Item> items = [
     Item(
     id: 01,
     name: "Apple iPhone 14 Plus 128GB Blue",
@@ -12,7 +11,13 @@ class CatalogModel {
     color: "#33505a",
     image: "https://m.media-amazon.com/images/I/61BGE6iu4AL._SX522_.jpg",
   )
-  ];*/
+  ];
+
+  getById(int id) {}
+
+  toMap() {}
+
+  static fromMap(Map<String, dynamic> map) {}
 
   /*static Item getById(int id) =>
       items.firstWhere((element) => element.id = id, orElse: null);

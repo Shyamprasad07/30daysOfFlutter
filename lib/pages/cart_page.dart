@@ -28,24 +28,26 @@ class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            "\$9999".text.xl5.color(context.theme.accentColor).make(),
-            30.widthBox,
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(context.theme.buttonColor)),
-              child: "Buy".text.white.make(),
-            )
-          ],
-        ).w32(context),
-      )
-    );
+        height: 100,
+        child: SingleChildScrollView(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              "\$99".text.xl5.color(context.theme.accentColor).make(),
+              30.widthBox,
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: "Buying not supported yet.".text.make()));
+                },
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(context.theme.buttonColor)),
+                child: "Buy".text.white.make(),
+              )
+            ],
+          ).w32(context),
+        ));
   }
 }
 
@@ -57,16 +59,17 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemCount: 5,
-    itemBuilder: (context, index) => ListTile(
-      leading: Icon(Icons.done),
-      trailing: IconButton(icon: Icon(Icons.remove_circle_outline),
-      onPressed: () {}
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(Icons.done),
+        trailing: IconButton(
+            icon: Icon(Icons.remove_circle_outline), onPressed: () {}),
+        title: "Item 1".text.make(),
       ),
-       title: "Item 1".text.make(),
-    ),
     );
   }
 }
