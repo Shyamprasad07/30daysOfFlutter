@@ -2,6 +2,9 @@ import 'dart:html';
 import 'dart:convert';
 
 class CatalogModel {
+   static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory ()=> catModel;
   static List<Item> items = [
     Item(
     id: 01,
@@ -13,16 +16,16 @@ class CatalogModel {
   )
   ];
 
-  getById(int id) {}
+   CatalogModel(int id) ;
 
   toMap() {}
 
-  static fromMap(Map<String, dynamic> map) {}
+   fromMap(Map<String, dynamic> map) {}
 
-  /*static Item getById(int id) =>
-      items.firstWhere((element) => element.id = id, orElse: null);
+  static Item getById(int id) => items.firstWhere((element) => true);
+    // items.firstWhere((element) => element.id = id, orElse: null);
 
- static Item getByPosition(int pos) => items[pos];*/
+ static Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
