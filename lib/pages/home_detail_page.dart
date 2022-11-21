@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catlog/Widgets/drawer.dart';
 import 'package:flutter_catlog/Widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter_catlog/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -61,6 +62,7 @@ class HomeDetailPage extends StatelessWidget {
               ))
             ],
           )),
+          drawer: MyDrawer(),
     );
   }
 }

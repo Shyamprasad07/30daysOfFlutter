@@ -46,6 +46,8 @@ class _HomePageState extends State<HomePage> {
     //final dummyList = List.generate(15, (index) => CatalogModel.items[0]);
 
     return Scaffold(
+      appBar: AppBar(),
+      
         backgroundColor: context.canvasColor,
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
@@ -67,6 +69,8 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        ));
+        ),
+      
+        );
   }
 }
